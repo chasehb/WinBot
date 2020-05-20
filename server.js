@@ -7,7 +7,7 @@ var is_event = false;
 // Define configuration options
 const opts = {
   identity: {
-    username: "winbot",
+    username: "winwinwinbot",
     password: "oauth:eha1nu7v3jp0cmbmuvmwpacsc21orr"
   },
   channels: [
