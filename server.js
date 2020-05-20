@@ -7,7 +7,7 @@ var is_event = false;
 // Define configuration options
 const opts = {
   identity: {
-    username: "better",
+    username: "winbot",
     password: "oauth:eha1nu7v3jp0cmbmuvmwpacsc21orr"
   },
   channels: [
@@ -41,7 +41,6 @@ function onMessageHandler (target, context, msg, self) {
   if (is_event){
     
     if (words[0] == "!event"){
-      console.log("D");
       if (event_dict[words[1]] in event_dict){
         event_dict[words[1]].push(context.username);
       }
@@ -53,16 +52,13 @@ function onMessageHandler (target, context, msg, self) {
   }
 
   if (commandName == "!startEvent"){
-    console.log("A");
     startEvent();
   }
 
   if (commandName == "!endEvent"){
-    console.log("B");
     endEvent();
   }
   if (words[0] == "!getWinner"){
-    console.log("C");
     getWinner(words[1], target);
   }
 
@@ -78,17 +74,14 @@ function newEvent(title){
 }
 
 function startEvent(){
-  console.log("A");
   is_event = true;
 }
 
 function endEvent(win_value){
-  console.log("B");
   is_event = false;
 }
 
 function getWinner(win_value, target){
-  console.log("C");
   if (win_value in event_dict){
     var win_list = event_dict[win_value];
     console.log(win_list);
