@@ -6,13 +6,20 @@ var is_event = false;
 
 // Define configuration options
 const opts = {
-  identity: {
-    username: "winwinwinbot",
-    password: "oauth:eha1nu7v3jp0cmbmuvmwpacsc21orr"
-  },
-  channels: [
-    "chasehb"
-  ]
+    options: {
+        debug: true,
+    },
+    connection: {
+        cluster: 'aws',
+        reconnect: true,
+    },
+    identity: {
+        username: "winwinwinbot",
+        password: "oauth:3j3cgx5abzo7rm3gz2di1ua024wjr5",
+    },
+    channels: [
+        "chasehb"
+    ],
 };
 // Create a client with our options
 const client = new tmi.client(opts);
@@ -67,6 +74,8 @@ function onMessageHandler (target, context, msg, self) {
 // Called every time the bot connects to Twitch chat
 function onConnectedHandler (addr, port) {
   console.log(`* Connected to ${addr}:${port}`);
+  //client.say("chasehb", "Bot Connected");
+  //client.action("chasehb", "1232");
 }
 
 function newEvent(title){
